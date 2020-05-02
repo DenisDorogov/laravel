@@ -7,15 +7,34 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-    public function listArticles()
+    protected $articles = [];
+
+    public function __construct()
     {
-        $articles = [
+        $this->articles = [
             'Первая статья',
             'Вторая статья',
             'Третья статья'
         ];
-
-        return view('articles.listArticles');
-        //Указание к папке и файлу вьюхи
     }
+    public function listArticles()
+    {
+        return view('articles.listArticles', [
+            'articles' => $this->articles
+
+        ]);
+    }
+
+    public function getArticle(int $id)
+    {
+        if (!isset($this->articles[$id])) {
+            return abort (404);
+        }
+         return view('articles.article', [
+            'article' => $this->articles[$id]
+
+        ]);
+    }
+
+
 }

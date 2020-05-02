@@ -3,11 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/test', 'TestController@testAction');
 
-
-Route::get('/hello/{name}/{lastname}.html', 'TestController@testActionName');
-
+Route::get('/articles.html', 'Articles\IndexController@listArticles');
+Route::get('/article/{id}.html', 'Articles\IndexController@getArticle')->name('article');
+// ->name() называем наш роут определённым именем, что-бы вызвать во вьюшке
 
 
 
