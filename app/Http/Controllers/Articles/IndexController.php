@@ -36,5 +36,13 @@ class IndexController extends Controller
         ]);
     }
 
+    public function saveArticle(Request $request) {
+        //dd($request->all()); - смотрим что пришло в request
+        $all = $request->all();
+        $article = $all['article'];
+        $this->articles[] = $article; // Добавляем новую статью
+        return redirect()->route('articles'); // перенаправляем обратно на роут.
+    }
+
 
 }

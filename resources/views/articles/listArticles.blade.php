@@ -15,6 +15,13 @@
             {{-- @php @endphp вместо тегов php--}}
         @endforeach
     </div>
+    <br>
+    <div>
+        <form action="{{route('articles')}}" method="post">
+            @csrf
+            <input type="text" name="article"><button type="submit">OK</button>
+        </form>
+    </div>
 
 </body>
 </html>

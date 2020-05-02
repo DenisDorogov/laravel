@@ -4,9 +4,12 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('/articles.html', 'Articles\IndexController@listArticles');
+    Route::get('/articles.html', 'Articles\IndexController@listArticles')
+        ->name('articles');
     Route::get('/article/{id}.html', 'Articles\IndexController@getArticle')
         ->name('article');
+    Route::post('/articles.html', 'Articles\IndexController@saveArticle')
+        ->name('articles'); // Такое же имя допустимо, так как другой метод.
 });
 
 
