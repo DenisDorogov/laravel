@@ -1,12 +1,14 @@
-<?php
+<?php //D:\code\laravel\routes\web.php
 
 use Illuminate\Support\Facades\Route;
 
 
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('/articles.html', 'Articles\IndexController@listArticles');
+    Route::get('/article/{id}.html', 'Articles\IndexController@getArticle')
+        ->name('article');
+});
 
-Route::get('/articles.html', 'Articles\IndexController@listArticles');
-Route::get('/article/{id}.html', 'Articles\IndexController@getArticle')->name('article');
-// ->name() называем наш роут определённым именем, что-бы вызвать во вьюшке
 
 
 
