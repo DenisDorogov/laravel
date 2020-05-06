@@ -8,16 +8,17 @@ use Illuminate\Http\Request;
 class MainController extends Controller
 {
     protected $categoies = [];
+    protected $links = [];
 
     public function  __construct()
     {
         $this->categoies = $this->getCategory();
+        $this->links = array_unshift($categories, 'main');
     }
 
 
 
     public function mainPage() {
-        $links = array_unshift($categories, 'main');
         return view('articles.main', $links);
     }
 
