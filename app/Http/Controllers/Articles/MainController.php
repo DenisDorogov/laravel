@@ -7,13 +7,10 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-//    protected $categoies = [];
-
     protected $newsFeed = [];
 
     public function  __construct()
     {
-        //$this->categoies = $this->getCategory();
     }
 
 
@@ -35,7 +32,7 @@ class MainController extends Controller
         }
         //var_dump($this->newsFeed);
         //asort($this->newsFeed[]['date']); //TODO https://www.php.net/manual/ru/function.usort.php
-        //var_dump($this->newsFeed);
+        //var_dump($this->newsFeed); //нужно сделать сортировку по ключу элементов массива.
         return $this->newsFeed;
     }
 

@@ -14,14 +14,8 @@
         <a href="/wn/main">Main</a>
         @foreach($links as $key => $value)
             <a href="{{route('category', ['name' => $value] )}}">{{$value}}</a>
-
         @endforeach
         <a href="/wn/autorisation">Autorisation</a>
-{{--        @foreach($articles as $key => $value)--}}
-{{--            <p><a href="{{route('article', ['id' => $key])}}">{{$key}} - {{$value}}</a></p>--}}
-{{--            --}}{{-- <?php echo $key ?> эквивалент {{}} --}}
-{{--            --}}{{-- @php @endphp вместо тегов php--}}
-{{--        @endforeach--}}
     </header>
     <div>
         <h3>Это новый новостной сайт.</br> Только хорошие новости!</h3>
