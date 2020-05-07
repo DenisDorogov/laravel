@@ -11,12 +11,13 @@
 <div class="container">
     <header>
         <h1>World News</h1>
-        @foreach($links as $value)
-            <a href="">{{$value}}</a>
-
+        <a href="/wn/main">Main</a>
+        @foreach($links as $key => $value)
+            <a href="{{route('category', ['name' => $value] )}}">{{$value}}</a>
         @endforeach
+        <a href="/wn/autorisation">Autorisation</a>
     </header>
-        <h3>{{$category}}</h3>
+        <h3>{{$name}}</h3>
     <div class="news-feed">
         <ul>
             @foreach($news as $article)
