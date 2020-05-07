@@ -16,6 +16,9 @@ Route::group(['prefix' => 'admin'], function() {
 //Создал отдельную группу для своего сайта новостей
 Route::group(['prefix' => 'wn'], function() {
     Route::get('/main', 'Articles\MainController@mainPage');
+    Route::get('category/{name}', 'Articles\CategoryController@getCategoryNews')->name('category');
+
+
 });
 
 

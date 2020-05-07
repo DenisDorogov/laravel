@@ -10,17 +10,31 @@
 <body>
 <div class="container">
     <header>
-        @foreach($links as $value)
-            <a href="">{{$value}}</a>
+        <h1>World News</h1>
+        <a href="/wn/main">Main</a>
+        @foreach($links as $key => $value)
+            <a href="{{route('category', ['name' => $value] )}}">{{$value}}</a>
 
         @endforeach
+        <a href="/wn/autorisation">Autorisation</a>
+{{--        @foreach($articles as $key => $value)--}}
+{{--            <p><a href="{{route('article', ['id' => $key])}}">{{$key}} - {{$value}}</a></p>--}}
+{{--            --}}{{-- <?php echo $key ?> эквивалент {{}} --}}
+{{--            --}}{{-- @php @endphp вместо тегов php--}}
+{{--        @endforeach--}}
     </header>
+    <div>
+        <h3>Это новый новостной сайт.</br> Только хорошие новости!</h3>
+    </div>
     <div class="news-feed">
-        @foreach($news as $article)
-            <div class="news-feed-elem" >
-                <p>{{$article['date']}} <a href="">{{$article['title']}}</a></p>
-            </div>
-        @endforeach
+        <ul>
+            @foreach($news as $article)
+                <div class="news-feed-elem" >
+                    <li>{{$article['date']}} <a href="">{{$article['title']}}</a></li>
+                </div>
+            @endforeach
+        </ul>
+
     </div>
 </div>
 

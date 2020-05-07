@@ -11,6 +11,8 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+
+    protected $links = [];
     protected $categories = [
         'sience',
         'gatgets',
@@ -18,6 +20,7 @@ class Controller extends BaseController
         'politics',
         'nature'
     ];
+
     protected $news = [
         'sience' =>
             [
@@ -82,6 +85,7 @@ class Controller extends BaseController
 
     public function __construct()
     {
+
        //View::share('main', 'main');
     }
 
@@ -93,6 +97,11 @@ class Controller extends BaseController
     public function getNews()
     {
         return $this->news;
+    }
+
+    public function getLinks() {
+        $this->links = $this->categories;
+        return $this->links;
     }
 
 

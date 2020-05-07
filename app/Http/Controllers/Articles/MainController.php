@@ -7,24 +7,22 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-    protected $categoies = [];
-    protected $links = [];
+//    protected $categoies = [];
+
     protected $newsFeed = [];
 
     public function  __construct()
     {
-        $this->categoies = $this->getCategory();
-        //var_dump($this->categoies);
-        $this->links = $this->categories;
-        array_unshift( $this->links, 'main');
+        //$this->categoies = $this->getCategory();
     }
 
 
 
     public function mainPage() {
         $this->getNewsFeed();
+//        dd($this->getLinks());
         return view('articles.main', [
-            'links' => $this->links,
+            'links' => $this->getLinks(),
             'news' => $this->newsFeed
         ]);
     }
