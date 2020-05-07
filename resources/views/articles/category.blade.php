@@ -20,9 +20,9 @@
         <h3>{{$name}}</h3>
     <div class="news-feed">
         <ul>
-            @foreach($news as $article)
+            @foreach($news as $key => $article)
                 <div class="news-feed-elem" >
-                    <li>{{$article['date']}} <a href="">{{$article['title']}}</a></li>
+                    <li>{{date('Y-m-d H:i:s',$article['date'])}} <a href="">{{$article['title']}}</a></li>
                 </div>
             @endforeach
         </ul>

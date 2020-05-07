@@ -24,7 +24,7 @@
         <ul>
             @foreach($news as $article)
                 <div class="news-feed-elem" >
-                    <li>{{$article['date']}} <a href="">{{$article['title']}}</a></li>
+                    <li>{{date('Y-m-d H:i:s',$article['date'])}} <a href="">{{$article['title']}}</a></li>
                 </div>
             @endforeach
         </ul>
