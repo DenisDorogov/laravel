@@ -9,17 +9,36 @@ class MainController extends Controller
 {
     protected $categoies = [];
     protected $links = [];
+    protected $newsFeed = [];
 
     public function  __construct()
     {
         $this->categoies = $this->getCategory();
-        $this->links = array_unshift($categories, 'main');
+        //var_dump($this->categoies);
+        $this->links = $this->categories;
+        array_unshift( $this->links, 'main');
     }
 
 
 
     public function mainPage() {
-        return view('articles.main', $links);
+        $this->getNewsFeed();
+        return view('articles.main', [
+            'links' => $this->links,
+            'news' => $this->newsFeed
+        ]);
+    }
+
+    public function getNewsFeed() {
+        foreach ($this->news as $category => $arrayArticles) {
+            foreach ($arrayArticles as $article) {
+                $this->newsFeed[] = $article;
+            }
+        }
+        //var_dump($this->newsFeed);
+        //asort($this->newsFeed[]['date']); //TODO https://www.php.net/manual/ru/function.usort.php
+        //var_dump($this->newsFeed);
+        return $this->newsFeed;
     }
 
 }
