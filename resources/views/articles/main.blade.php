@@ -13,7 +13,7 @@
         <h1>World News</h1>
         <a href="/wn/main">Main</a>
         @foreach($links as $key => $value)
-            <a href="{{route('category', ['name' => $value] )}}">{{$value}}</a>
+            <a href="{{route('category', ['name' => $value] )}}"> {{$value}} </a>
         @endforeach
         <a href="/wn/autorisation">Autorisation</a>
     </header>
