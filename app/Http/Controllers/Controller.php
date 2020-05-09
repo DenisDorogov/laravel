@@ -11,7 +11,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-
+    protected $newsFeed = [];
     protected $links = [];
     protected $categories = [
         'sience',
@@ -165,6 +165,24 @@ class Controller extends BaseController
     {
         $this->links = $this->categories;
         return $this->links;
+    }
+
+    public function getNewsFeed(string $name = null) {
+//        dd($name);
+        if (!isset($name)) {
+            foreach ($this->news as $category => $arrayArticles) {
+                foreach ($arrayArticles as $article) {
+                    $this->newsFeed[] = $article;
+                }
+            }
+            //var_dump($this->newsFeed);
+            //asort($this->newsFeed[]['date']); //TODO https://www.php.net/manual/ru/function.usort.php
+            //var_dump($this->newsFeed); //нужно сделать сортировку по ключу элементов массива.
+            return $this->newsFeed;
+        } else {
+            return $this->news[$name];
+        }
+
     }
 
 
