@@ -17,15 +17,10 @@
         @endforeach
         <a href="/wn/autorisation">Autorisation</a>
     </header>
-    <h3>{{$name}}</h3>
-    <div class="news-feed">
-        <ul>
-            @foreach($news as $key => $article)
-                <div class="news-feed-elem" >
-                    <li>{{date('Y-m-d H:i:s',$article['date'])}} <a href="">{{$article['title']}}</a></li>
-                </div>
-            @endforeach
-        </ul>
+    <div class="article">
+        <h2>{{$article['title']}}</h2>
+        <p><i>{{date('Y-m-d H:i:s',$article['date'])}}</i></p>
+        <p>{{$article['text']}}</p>
     </div>
 </div>
 </body>

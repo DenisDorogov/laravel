@@ -185,5 +185,11 @@ class Controller extends BaseController
 
     }
 
+    public function getArticle(string $cat, int $num)
+    {
+//        dd($this->news[$cat][$num]);
+        return $this->news[$cat][$num];
+    }
+
 
 }

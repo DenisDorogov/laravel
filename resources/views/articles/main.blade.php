@@ -22,9 +22,9 @@
     </div>
     <div class="news-feed">
         <ul>
-            @foreach($news as $article)
+            @foreach($news as $key => $article)
                 <div class="news-feed-elem" >
-                    <li>{{date('Y-m-d H:i:s',$article['date'])}} <a href="">{{$article['title']}}</a></li>
+                    <li>{{date('Y-m-d H:i:s',$article['date'])}} <a href="{{route('articleWN', ['cat' => $value, 'num' => $key] )}}">{{$article['title']}}</a></li>
                 </div>
             @endforeach
         </ul>
