@@ -18,7 +18,7 @@ Route::group(['prefix' => 'wn'], function() {
     Route::get('/main', 'Articles\MainController@mainPage');
     Route::get('category/{name}', 'Articles\CategoryController@getCategoryNews')
         ->name('category');
-    Route::get('/article/{cat}/{num}', 'Articles\ArticleController@veiwArticle')
+    Route::get('/article/{num}', 'Articles\ArticleController@veiwArticle')
         ->name('articleWN');
 
 
