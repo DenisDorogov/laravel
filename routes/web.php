@@ -20,6 +20,10 @@ Route::group(['prefix' => 'wn'], function() {
         ->name('category');
     Route::get('/article/{num}', 'Articles\ArticleController@veiwArticle')
         ->name('articleWN');
+    Route::get('/auth', 'Articles\AuthController@Auth')
+        ->name('auth');
+    Route::post('/auth', 'Articles\AuthController@checkUser')
+        ->name('check');
 
 
 });
