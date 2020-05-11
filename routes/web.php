@@ -24,8 +24,12 @@ Route::group(['prefix' => 'wn'], function() {
         ->name('auth');
     Route::post('/auth', 'Articles\AuthController@checkUser')
         ->name('check');
-
-
+    Route::group(['prefix' => 'cms'], function() {
+        Route::get('/create-article', 'Articles\CreateArticleController@creatingArticle')
+            ->name('createArticle');
+        Route::post('/create-article', 'Articles\CreateArticleController@creatingArticleData')
+            ->name('createArticle');
+    });
 });
 
 

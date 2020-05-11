@@ -35,6 +35,8 @@
         </form>
 {{--    <li>{{date('Y-m-d H:i:s',$article['date'])}} <a href="{{route('articleWN', [ 'num' => $article['id']] )}}">{{$article['title']}}</a></li>--}}
     </div>
+    <br>
+    <a href="{{route('createArticle')}}">Создание статьи после авторизации админа</a>
 </div>
 
 

@@ -21,7 +21,6 @@ class AuthController extends Controller
         $pass = $data['password'];
         $data['remember'] == 'on' ? $remember = true : $remember = false;
         dd($data);
-
-        // return ;
+        //TODO Реализовать запись в БД
     }
 }
