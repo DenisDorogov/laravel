@@ -37,6 +37,9 @@
     </div>
     <br>
     <a href="{{route('createArticle')}}">Создание статьи после авторизации админа</a>
+    <footer>
+        <p><i>&copyDenisDorogov</i></p>
+    </footer>
 </div>
 
 

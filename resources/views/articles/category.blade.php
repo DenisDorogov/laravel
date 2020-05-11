@@ -27,6 +27,9 @@
             @endforeach
         </ul>
     </div>
+    <footer>
+        <p><i>&copyDenisDorogov</i></p>
+    </footer>
 </div>
 </body>
 </html>

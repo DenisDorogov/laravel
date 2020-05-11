@@ -22,6 +22,9 @@
         <p><i>{{date('Y-m-d H:i:s',$article['date'])}}</i></p>
         <p>{{$article['text']}}</p>
     </div>
+    <footer>
+        <p><i>&copyDenisDorogov</i></p>
+    </footer>
 </div>
 </body>
 </html>
