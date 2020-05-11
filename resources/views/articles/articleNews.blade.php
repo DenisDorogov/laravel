@@ -15,7 +15,7 @@
         @foreach($links as $key => $value)
             <a href="{{route('category', ['name' => $value] )}}"> {{$value}} </a>
         @endforeach
-        <a href="/wn/autorisation">Autorisation</a>
+        <a href="/wn/auth">Autorisation</a>
     </header>
     <div class="article">
         <h2>{{$article['title']}}</h2>
