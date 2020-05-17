@@ -189,7 +189,7 @@ class Controller extends BaseController
     }
 
     public function getNewsFeed(string $cat = null) {
-//        dd($name);
+//        dd($this->news);
         if (!isset($cat)) {
             foreach ($this->news as $id => $arrArticle) {
                     $this->newsFeed[] = $arrArticle;
@@ -198,8 +198,9 @@ class Controller extends BaseController
             //asort($this->newsFeed[]['date']); //TODO https://www.php.net/manual/ru/function.usort.php
             //var_dump($this->newsFeed); //нужно сделать сортировку по ключу элементов массива.
         } else {
+            $key = array_search($cat, $this->categories);
             foreach ($this->news as $id => $arrArticle) {
-                if ($arrArticle['category'] == $cat)
+                if ($arrArticle['category'] == $key)
                 $this->newsFeed[] = $arrArticle;
             }
 

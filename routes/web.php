@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'IndexController@index' )->name('index');
+//Route::get('/', 'IndexController@index' )->name('index');
 
 
 Route::group(['prefix' => 'admin'], function() {
@@ -16,11 +16,11 @@ Route::group(['prefix' => 'admin'], function() {
 
 
 //Создал отдельную группу для своего сайта новостей
-Route::group(['prefix' => 'wn'], function() {
-    Route::get('/main', 'Articles\MainController@mainPage');
-    Route::get('category/{name}', 'Articles\CategoryController@getCategoryNews')
+//Route::group(['prefix' => 'wn'], function() {
+    Route::get('/', 'Articles\MainController@mainPage');
+    Route::get('/category/{name}', 'Articles\CategoryController@getCategoryNews')
         ->name('category');
-    Route::get('/article/{num}', 'Articles\ArticleController@veiwArticle')
+    Route::get('article/{num}', 'Articles\ArticleController@veiwArticle')
         ->name('articleWN');
     Route::get('/auth', 'Articles\AuthController@Auth')
         ->name('auth');
@@ -32,7 +32,7 @@ Route::group(['prefix' => 'wn'], function() {
         Route::post('/create-article', 'Articles\CreateArticleController@creatingArticleData')
             ->name('createArticle');
     });
-});
+//});
 
 
 
