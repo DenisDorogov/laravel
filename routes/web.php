@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', 'IndexController@index' )->name('index');
+
 
 Route::group(['prefix' => 'admin'], function() {
     Route::get('/articles.html', 'Articles\IndexController@listArticles')
